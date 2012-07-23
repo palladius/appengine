@@ -1,0 +1,30 @@
+Synopsis
+========
+
+This application is basically copied from Code in the cloud book.
+
+It currently has a bug in chatoneway.py :-(
+
+The rest works great!
+
+Develop
+=======
+
+To test locally:
+
+  $ dev_appserver.py chatone
+  
+Bugs
+====
+
+- chat.py works perfectly
+- chatoneway.py is currently broken :(
+- cron was just added, just for the craic
+
+Install
+=======
+
+  $ appcfg.py update chatone                       # deploy app
+  $ appcfg.py set_default_version chatone          # sets default version as specified in app.yaml
+
+  $ open http://riccardo-chatroom-one.appspot.com/

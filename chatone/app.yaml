@@ -1,0 +1,18 @@
+#
+#
+# copied from book
+#
+#
+#
+application: riccardo-chatroom-one
+version: chatoneway-11
+runtime: python
+api_version: 1
+
+handlers:
+- url: /.*
+#  script: chatoneoway.py        # broken
+  script: chat.py               # works perfectly
+- url: /report/weekly
+  script: weekly_report.py
+  login: admin

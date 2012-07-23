@@ -1,0 +1,16 @@
+###############################################################################
+# copied from: https://developers.google.com/appengine/docs/python/config/cron
+###############################################################################
+cron:
+- description: Test Riccardo 1
+  url: /tasks/summary
+  schedule: every 24 hours
+  timezone: Europe/Dublin
+- description: monday morning mailout
+  url: /mail/weekly
+  schedule: every monday 09:00
+  timezone: Europe/Dublin
+- description: new daily summary job
+  url: /tasks/summary
+  schedule: every 24 hours
+  target: version-2
