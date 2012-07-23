@@ -11,8 +11,13 @@ My projects:
 - `chatone`. My personal chat project, copied/inspired by Code in the Cloud book.
 - `provapally`. Code I copied for test from google tutorial (doesnt work afaik)
 
+Other people:
 
-
+- `mpr312`: interesting small app (python) where API keys are traken from DataStore. To be studied
+- `appengine-search`: Search test app (python). Uses Task Queue API to schedule seatrch indexing, I guess.
+- `appengine_csv`: dunno. I see encoding, probably it handles CSV :) @template
+- `dknbot`: does some XMPP stuff, probably shortening URLs..
+- `flask-appengine-template`: super full featured and documented app (python). Boilerplate project template for running a Flask-based application
 
 
 Credits
