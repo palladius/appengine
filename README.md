@@ -17,3 +17,4 @@ Github users:
 - dkerwin for https://github.com/dkerwin/appengine : dknbot
 - krosaen for appengine-search
 - earzur for `appengine_csv` : https://github.com/earzur/appengine_csv
+- kamalgill for `flask-appengine-template`: https://github.com/kamalgill/flask-appengine-template/
