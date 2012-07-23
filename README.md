@@ -3,6 +3,13 @@ Synopsis
 
 This file tries to have all possible GAE repos I can find on the internet
 
+Projects
+--------
+
+My projects:
+
+- `chatone`. My personal chat project, copied/inspired by Code in the Cloud book.
+- `provapally`. Code I copied for test from google tutorial (doesnt work afaik)
 
 
 
