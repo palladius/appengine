@@ -25,8 +25,8 @@ Credits
 
 Github users:
 
-- red for mpr312 application
-- dkerwin for https://github.com/dkerwin/appengine : dknbot
-- krosaen for appengine-search
+- red for `mpr312`
+- dkerwin for `dknbot`: https://github.com/dkerwin/appengine
+- krosaen for `appengine-search`
 - earzur for `appengine_csv` : https://github.com/earzur/appengine_csv
 - kamalgill for `flask-appengine-template`: https://github.com/kamalgill/flask-appengine-template/
