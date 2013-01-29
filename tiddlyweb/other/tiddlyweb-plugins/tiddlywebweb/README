@@ -1,0 +1,50 @@
+
+tiddlywebweb is a plugin for TiddlyWeb that allows the use
+of a different TiddlyWeb instance as its datastore.
+
+It has been created for several reasons:
+
+* Because it is useful for doing things like interacting with
+  TiddlyWeb on Google App Engine.
+* To demonstrate the extensibility and flexibility of the TiddlyWeb
+  system. Including "code A does not need to be near code B".
+* To stimulate the creation a python-based client side library for
+  accessing TiddlyWeb.
+* To prove (as in test) the system.
+* To enable a platform for performance testing.
+* To confirm HTTP cache header handling.
+* To do the luscious CSci wankery of self-hosting.
+
+Once the package is installed, to use add the following to 
+the tiddlywebconfig.py of an existing instance:
+
+        'server_store': ['tiddlywebplugins.tiddlywebweb', {
+            'server_base': 'http://0.0.0.0:8000',
+        },
+
+Set server_base to the URL (including server_prefix) of
+the root (without the trailing /) of the target TiddlyWeb.
+
+See pydoc tiddlywebplugins.tiddlywebweb for more details.
+
+You can then do things like:
+
+   twanager lbags
+
+to list all the bags on the remote server. You can also start 
+the local server, and interact via tiddlywebweb with the 
+remote TiddlyWeb.
+
+TODO:
+* Authentication and Authorization handling very limited.
+
+See this blog posting for some relatively old information:
+http://cdent.tumblr.com/post/46209623/webs-of-tiddlywebs-with-tiddlywebweb
+
+And this one for some information on using tiddlywebweb with
+TiddlyWeb hosted on Google App Engine:
+http://cdent.tumblr.com/post/283065885/tiddlywebweb-to-app-engine
+
+Copyright 2009-2010, Chris Dent <cdent@peermore.com>
+
+Licensed under the same terms as TiddlyWeb itself.

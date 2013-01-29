@@ -1,0 +1,73 @@
+
+A store that uses Python's SQLAlchemy package to talk to a
+database. Lots of cleanup can be done.
+
+You will need to install SQLAlchemy to use this plugin:
+
+   easy_install -U sqlalchemy
+
+There is a test included in this directory, but the proper way
+to test this code is to run against the TiddlyWeb core test suite,
+with tiddlywebconfig.py set as follows:
+
+config = {
+    # using sqlite
+    'server_store': ['sql', {'db_config': 'sqlite:///test.db'}],
+    # using mysql 
+    #'server_store': ['sql',
+    #    {'db_config': 'mysql://localhost/tw?charset=utf8'}],
+}
+
+db_config is a database uri as used in SQLAlchmey.
+
+Upgrading:
+
+If you were running a version of the sql store prior to version 0.2,
+you will need to migrate you store from one schema to another. There
+is a 'migrate' plugin which can be used to assist with this migration.
+
+    http://github.com/tiddlyweb/tiddlyweb-plugins/tree/master/migrate
+
+Existing Issues:
+
+* When running against the tests, the created tables need to be dropped
+  between each test file.
+
+The Future:
+
+It's hoped that this will become a robust and efficient storage system
+for TiddlyWeb. There is a great deal of room for improvement to the
+code. Contributions are welcomed.
+
+Credits/License:
+
+A great deal of enhancement work for the sql store was done by
+Chris Dent <cdent@peermore.com> under the auspices of the wiki-data
+project of Avox: http://www.avox.info/about.shtml
+
+Copyright (c) Chris Dent 2009
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+Redistributions of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.
+
+Redistributions in binary form must reproduce the above copyright notice, this
+list of conditions and the following disclaimer in the documentation and/or other
+materials provided with the distribution.
+
+Neither the name of Chris Dent nor the names of contributors may be
+used to endorse or promote products derived from this software without specific
+prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS' AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+DAMAGE.

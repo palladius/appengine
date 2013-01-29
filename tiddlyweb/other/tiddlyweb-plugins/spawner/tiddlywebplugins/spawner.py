@@ -1,0 +1,26 @@
+"""
+A factory for use with spawning so TiddlyWeb can
+run under that high performance, non-blocking web
+server.
+
+Use like so:
+
+    spawn --factory=tiddlywebplugins.spawner.factory ''
+
+(The empty string argument is necessary for the time being).
+
+spawning can be found on pypi:
+
+    http://pypi.python.org/pypi/Spawning
+"""
+
+import tiddlyweb.web.serve
+
+
+def factory(args):
+    args['app_factory'] = 'tiddlywebplugins.spawner.app_factory'
+    return args
+
+
+def app_factory(args):
+    return tiddlyweb.web.serve.load_app()

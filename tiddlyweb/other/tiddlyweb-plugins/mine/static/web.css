@@ -1,0 +1,19 @@
+
+@import url("/static/tiddlyweb.css");
+
+.container {
+    background: #fff;
+    border: thin solid black;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.container form {
+    margin: .5em;
+    padding: .5em;
+    border: thin dotted black;
+}
+
+abbr {
+    border-top: thin dotted black;
+}

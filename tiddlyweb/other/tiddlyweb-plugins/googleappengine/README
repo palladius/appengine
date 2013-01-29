@@ -1,0 +1,81 @@
+
+It is possible to run TiddlyWeb on Google's AppEngine service, 
+with a bit of work. The process has evolved over time and become
+more simple. If you've investigated this process in the past and
+thought, no way, look again.
+
+The code in this directory provides two categories of things:
+
+* Code necessary for TiddlyWeb running on Google App Engine to
+  work there.
+* Code used to build the tiddlyweb google app engine application
+  that can be deployed to the App Engine servers (or run locally
+  with the SDK).
+
+The first category includes:
+
+* googledata.py: A StorageInterface implementation which stores
+  bag, recipes and tiddlers in the App Engine data store. Revisions
+  and Users are not currently handled (patches welcomed!).
+
+* google_user_challenger.py: A TiddlyWeb challenger that launches
+  an interface requesting the current user log into their google account.
+
+* google_user_extractor.py: A TidlyWeb extractor that asks the App
+  engine API for info on the current user.
+
+* tiddlywebconfig.py: A basic config which establishes the necessary
+  settings for the store, challenger and extractor to be used.
+
+* main.py: A simple script which bridges App Engine and TiddlyWeb's
+  WSGI nature.
+
+* app.yaml: App Engine configuration for the current app.
+
+In the second category is a Makefile which includes targets that
+use pip, virtualenv, mkdir and symlinks to gather together the
+required Python dependencies and build the necessary directory 
+hierarchy.
+
+The install process is as follows:
+
+* Get and install the Google App Engine SDK for your OS from
+  http://code.google.com/appengine/downloads.html
+
+* Make sure you have pip and virtualenv, available from PyPI.
+
+* In the directory with the Makefile:
+** edit tiddlywebconfig.py to set the host information near the top
+** edit app.yaml to set the name of the application if you will be 
+   deploy to appspot.com.
+** run 'make go'
+** If that completes without errors, in the directory 'go' will
+   be your ready to mount App Engine application.
+
+There are some limitations to this setup:
+
+* Though you may use google usernames in policies, there is as yet
+  not storage for Roles.
+
+* Tiddler revisions are not supported.
+
+* Because an App Engine application is web only, there's no way to
+  add content to the store other than through the web. Techniques
+  for bootstrapping an instance are described below.
+
+To get things started you will need at least one bag on the server.
+More likely you'll want a few bags, a recipe, and a few tiddlers.
+To add content you have a few options:
+
+* You can make direct HTTP calls to the server, using curl or other 
+  similar tools. See:
+  http://tiddlyweb.peermore.com/wiki/recipes/docs/tiddlers?select=text:curl
+
+* You can use tiddlywebweb to proxy local twanager actions through
+  to the app engine web server. See:
+  http://github.com/tiddlyweb/tiddlyweb-plugins/tree/master/tiddlywebweb
+  This is the recommended method.
+
+This code was created by Chris Dent, <cdent@peermore.com> and
+is Copyright, 2009. It is licensed under the same terms as TiddlyWeb
+itself.

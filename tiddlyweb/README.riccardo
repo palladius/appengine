@@ -1,5 +1,8 @@
 
 created thru:
 
-twinstance tiddlyweb
+	$ twinstance tiddlyweb
 
+howto integrate with GAE:
+
+	http://cdent.tumblr.com/post/278948050/smooth-tiddlyweb-on-app-engine
