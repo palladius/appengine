@@ -15,8 +15,6 @@ handlers:
 libraries:
 - name: webapp2
   version: "2.5.1"
-
 # copied from AppEngine GGuide
-libraries:
 - name: jinja2
   version: "latest"
