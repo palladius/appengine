@@ -1,5 +1,5 @@
 application: provapally
-version: 2
+version: 3-jinja
 runtime: python27
 api_version: 1
 threadsafe: yes
@@ -15,3 +15,8 @@ handlers:
 libraries:
 - name: webapp2
   version: "2.5.1"
+
+# copied from AppEngine GGuide
+libraries:
+- name: jinja2
+  version: "latest"
