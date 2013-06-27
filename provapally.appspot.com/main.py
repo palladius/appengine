@@ -20,9 +20,9 @@ class MainPage(webapp.RequestHandler):
     def get(self):
       user = users.get_current_user()
       if user:
-        names = ['Doogle', 'Akshay' ,  user.nickname() ]
+        names = ['Dougal', 'Ashley' ,  user.nickname() ]
       else:
-        names = ['Doogle', 'Akshay' , 'No user' ]
+        names = ['Dougal', 'Ashley' , 'No user' ]
       template_data = { 'names': names }
       #if user:
       #    self.response.headers['Content-Type'] = 'text/plain'
