@@ -20,21 +20,19 @@ class MainPage(webapp.RequestHandler):
     def get(self):
       user = users.get_current_user()
       if user:
-        names = ['Dougal', 'Ashley' ,  user.nickname() ]
+        names = ['Ricc', 'Alessandro' ,  user.nickname() ]
       else:
-        names = ['Dougal', 'Ashley' , 'No user' ]
+        names = ['Ricc', 'Alessandro' , 'No user (rebase)' ]
       template_data = { 'names': names }
       #if user:
       #    self.response.headers['Content-Type'] = 'text/plain'
-      #    self.response.out.write('[ProvaPally Obsolete]: Hello, ' + user.nickname())
+      #    self.response.out.write('[ProvaPally Obsolete]: Groezi Mittenand, liebe gaeste' + user.nickname())
       #else:
       #    self.redirect(users.create_login_url(self.request.uri))
       jinja_environment = jinja2.Environment( loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
       template = jinja_environment.get_template('index.html')
-      #self.response.write(template.render())
       self.response.write(template.render(template_data))
 
 app = webapp.WSGIApplication( [('/', MainPage)], debug=True )
-
 
 #app.response.write(template.render())
